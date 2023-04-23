@@ -19,7 +19,6 @@ I've undergone a significant professional evolution, transitioning from a career
 * I have developed my skills, such as Python programming, machine learning, data analysis, and data visualization.
 * I have gained new knowledge about data science concepts, tools, and methodologies. I have taken the FastAI course and the Amazon Web Services: Machine Learning course. These courses have given me certifications in data science techniques and enabled me to develpe the projects in this portfolio.
 
-### Who I serve
 
 ### What I offer
 
