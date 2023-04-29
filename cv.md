@@ -2,11 +2,14 @@
 layout: default
 title: CV
 nav_order: 4
+published: true
 ---
 
 
 
 # CV
+
+Test out having a PDF
 
 <object data="https://www.mytempfiles.info/mobius/MobiusManual.pdf" type="application/pdf" width="700px" height="700px">
     <embed src="https://www.mytempfiles.info/mobius/MobiusManual.pdf">
