@@ -2,6 +2,7 @@
 
 Liverpool, UK; [LinkedIn](https://www.linkedin.com/in/ben-barton-dev/), [Github](https://github.com/benbardev), [Orcid](https://www.orcid.org/0000-0001-9998-2064)
 
+---
 
 ### My mission
 
