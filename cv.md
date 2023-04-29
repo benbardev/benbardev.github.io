@@ -1,3 +1,11 @@
+---
+layout: default
+title: CV
+nav_order: 4
+---
+
+
+
 # CV
 
 <object data="https://www.mytempfiles.info/mobius/MobiusManual.pdf" type="application/pdf" width="700px" height="700px">
