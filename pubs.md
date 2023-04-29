@@ -6,17 +6,13 @@ published: true
 
 # Publications
 
-My ORCID ID is [0000-0001-9998-2064O](https://www.orcid.org/0000-0001-9998-2064).
+My ORCID ID is [0000-0001-9998-2064](https://www.orcid.org/0000-0001-9998-2064).
 
 
-|An Ice‐Ocean Model Study of the Mid‐2000s Regime Change in the Barents Sea|
-|---|
-|
-Journal of Geophysical Research: Oceans
-2022-11 | Journal article
-DOI: 10.1029/2021JC018280
-Contributors: Benjamin I. Barton; Camille Lique; Yueng‐Djern Lenn; Claude Talandier
-|
+| An Ice‐Ocean Model Study of the Mid‐2000s Regime Change in the Barents Sea |
+| --- |
+| Journal of Geophysical Research: Oceans<br>2022-11<br>DOI: 10.1029/2021JC018280<br>Contributors: Benjamin I. Barton; Camille Lique; Yueng‐Djern Lenn; Claude Talandier |
+
 |
 <details>
   <summary>Abstract</summary>
