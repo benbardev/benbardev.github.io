@@ -14,8 +14,8 @@ Liverpool, UK; [LinkedIn](https://www.linkedin.com/in/ben-barton-dev/), [Github]
 <div style="text-align: justify"> My background is in Arctic Ocean Physics and I completed a PhD in this in 2019. During the PhD project I used principal component analysis to identify clusters of data points that showed similar spatio-temporal patterns of variability. I also built a regression model to combine satellite data into a new variable. Previously I </div> 
 
 ### How I've grown
-<div style="text-align: justify"> I've undergone a significant professional evolution, transitioning from a career in ocean science to data science. This transition has required me to develop new skills, broaden my knowledge base, and adapt to a new field.|
-* I have developed my skills, such as Python programming, machine learning, data analysis, and data visualization.
-* I have gained new knowledge about data science concepts, tools, and methodologies. I have taken the FastAI course and the Amazon Web Services: Machine Learning course. These courses have given me certifications in data science techniques and enabled me to develpe the projects in this portfolio. </div>
+<div style="text-align: justify"> I've undergone a significant professional evolution, transitioning from a career in ocean science to data science. This transition has required me to develop new skills, broaden my knowledge base, and adapt to a new field.</div>
+<div style="text-align: justify"> * I have developed my skills, such as Python programming, machine learning, data analysis, and data visualization.</div>
+<div style="text-align: justify"> * I have gained new knowledge about data science concepts, tools, and methodologies. I have taken the FastAI course and the Amazon Web Services: Machine Learning course. These courses have given me certifications in data science techniques and enabled me to develpe the projects in this portfolio. </div>
 
 ### What I offer
