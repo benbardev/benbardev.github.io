@@ -5,7 +5,8 @@ Liverpool, UK; [LinkedIn](https://www.linkedin.com/in/ben-barton-dev/), [Github]
 
 ### My mission
 
-![image](images/profile_photo_s.jpg){: style="float: right"} 
+[//]: <> ![image](images/profile_photo_s.jpg){: style="float: right"}
+<img src="images/profile_photo_s.jpg" height="auto" width="200" style="float: right; border-radius:50%; margin-right: 10px;">
 <div style="text-align: justify"> As an ocean scientist turned data scientist, I am passionate about using data-driven approaches to solve complex problems. My background in oceanography has given me a strong foundation in scientific research methods, data modelling, and analysis. Through my transition to data science, I have gained experience in machine learning, statistical analysis, and data visualization. I am excited to apply these skills to a variety of industries and use data to drive innovation and positive change. </div>
 
 
