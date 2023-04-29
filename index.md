@@ -1,4 +1,4 @@
-<font size=”1”>Benjamin Barton, Ph.D.</font>
+<font size=”6”> Benjamin Barton, Ph.D. </font>
 
 Liverpool, UK; [LinkedIn](https://www.linkedin.com/in/ben-barton-dev/), [Github](https://github.com/benbardev), [Orcid](https://www.orcid.org/0000-0001-9998-2064)
 
