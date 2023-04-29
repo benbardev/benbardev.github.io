@@ -1,8 +1,3 @@
-{% assign sorted_pages = site.pages | sort:"order" %}
-{% for node in sorted_pages %}
-  <li><a href="{{node.url}}">{{node.title}}</a></li>
-{% endfor %}
-
 <span style="font-size:2em;"> Benjamin Barton, Ph.D. </span>
 
 Liverpool, UK; [LinkedIn](https://www.linkedin.com/in/ben-barton-dev/), [Github](https://github.com/benbardev), [Orcid](https://www.orcid.org/0000-0001-9998-2064)
