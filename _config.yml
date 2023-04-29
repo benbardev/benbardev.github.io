@@ -28,10 +28,15 @@ plugins:
   - jekyll-octicons
   - jekyll-github-metadata
 
+header_pages:
+  - projects.md
+  - pubs.md
+  - cv.md
+
 titles_from_headings:
   enabled:     false
-  strip_title: true
-  collections: true
+  strip_title: false
+  collections: false
 
 highlighter: rouge
 markdown: kramdown
