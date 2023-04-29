@@ -1,17 +1,19 @@
-## Benjamin I. Barton
-Liverpool, UK; [LinkedIn](https://www.linkedin.com/in/ben-barton-dev/)
+<font size=”1”>Benjamin Barton, Ph.D.</font>
+
+Liverpool, UK; [LinkedIn](https://www.linkedin.com/in/ben-barton-dev/), [Github](https://github.com/benbardev), [Orcid](https://www.orcid.org/0000-0001-9998-2064)
 
 
 ### My mission
 
-
 ![image](images/profile_photo_s.jpg){: style="float: right"}
-As an ocean scientist turned data scientist, I am passionate about using data-driven approaches to solve complex problems. My background in oceanography has given me a strong foundation in scientific research methods, data collection, and analysis. Through my transition to data science, I have gained experience in machine learning, statistical analysis, and data visualization. I am excited to apply these skills to a variety of industries and use data to drive innovation and positive change. 
+As an ocean scientist turned data scientist, I am passionate about using data-driven approaches to solve complex problems. My background in oceanography has given me a strong foundation in scientific research methods, data modelling, and analysis. Through my transition to data science, I have gained experience in machine learning, statistical analysis, and data visualization. I am excited to apply these skills to a variety of industries and use data to drive innovation and positive change. 
 
 
 ### My story
 
+I am a coastal ocean modeller at the National Oceanography Centre, UK. I have expertise in scientific data analysis and pre-processing data for models. I work on performing numerical simulations of ocean using high performace computing clusters. 
 
+My background is in Arctic Ocean Physics and I completed a PhD in this in 2019. During the PhD project I used principal component analysis to identify clusters of data points that showed similar spatio-temporal patterns of variability. I also built a regression model to combine satellite data into a new variable. Previously I 
 
 ### How I've grown
 
