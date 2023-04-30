@@ -6,7 +6,7 @@
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
 
-title: Benjamin #Barton, Ph.D.
+title: Benjamin Barton, Ph.D.
 description: A collection of the projects I've been working on... ❤
 github_username: benbardev
 
@@ -15,6 +15,10 @@ email:
 twitter_username:
 linkedin_username: ben-barton-dev
 linkedin_url: "https://www.linkedin.com/in/ben-barton-dev/"
+google_scholar_username: Benjamin I. Barton
+google_scholar_url: "https://scholar.google.fr/citations?user=h93xgqMAAAAJ&hl=en"
+orcid_username: 0000-0001-9998-2064
+orid_url: "https://www.orcid.org/0000-0001-9998-2064"
 
 minima:
     social_links:
