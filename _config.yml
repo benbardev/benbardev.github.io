@@ -13,13 +13,15 @@ github_username: benbardev
 # Email and twitter are optional:
 email:
 twitter_username:
+linkedin_username: ben-barton-dev
+linkedin_url: "https://www.linkedin.com/in/ben-barton-dev/"
 
 minima:
     social_links:
     - { platform: github,  user_url: "https://github.com/benbardev" }
     - { platform: linkedin, user_url: "https://www.linkedin.com/in/ben-barton-dev/" }
     - { platform: google_scholar, user_url: "https://scholar.google.fr/citations?user=h93xgqMAAAAJ&hl=en" }
-    - { platform: orcid, user_url: "https://www.orcid.org/0000-0001-9998-2064" }
+#    - { platform: orcid, user_url: "https://www.orcid.org/0000-0001-9998-2064" }
 
 # Set this to true to get LaTeX math equation support
 use_math: true
