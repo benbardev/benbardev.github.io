@@ -30,7 +30,7 @@ plugins:
 
 header_pages:
   - projects.md
-  - pubs.md
+  - publications.md
   - cv.md
 
 titles_from_headings:
