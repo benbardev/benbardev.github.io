@@ -8,7 +8,7 @@ published: true
 
 Weclome to my portfolio of projects. Here you'll find a posts showcasing the projects I've been working on. My github can be found [here](https://github.com/benbardev).
 
-| <div style="width:250px">property</div>Starship Titanic | Cloud Type Classifier | Cat/Dog Breed Identifier |
+| Starship Titanic | Cloud Type Classifier | Cat/Dog Breed Identifier |
 |---|---|---|
 | <img src="images/starship.jpg" style="border-radius:10%" width=200px> | <img src="images/cloud.jpg" style="border-radius:10%" width=250px> | <img src="images/cat_dog.jpg" style="border-radius:10%" width=200px> |
 | [Link to Project](projects/starship) | [Link to Project](projects/cloud_classifier) | [Link to Project](projects/cat_dog) |
