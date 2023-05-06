@@ -1,6 +1,6 @@
 <span style="font-size:2em;"> Benjamin Barton, Ph.D. </span>
 
-Liverpool, UK; <img src="_includes/social_icons/linkedin.svg" height="auto" width="16">[LinkedIn](https://www.linkedin.com/in/ben-barton-dev/), <img src="_includes/social_icons/github.svg" height="auto" width="16">[Github](https://github.com/benbardev), <img src="_includes/social_icons/orcid.svg" height="auto" width="16">[ORCID](https://www.orcid.org/0000-0001-9998-2064)
+Liverpool, UK; [LinkedIn](https://www.linkedin.com/in/ben-barton-dev/), [Github](https://github.com/benbardev), [ORCID](https://www.orcid.org/0000-0001-9998-2064)
 
 ---
 
