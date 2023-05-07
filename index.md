@@ -24,5 +24,5 @@ Liverpool, UK; [LinkedIn](https://www.linkedin.com/in/ben-barton-dev/), [Github]
 
 ### What I offer
 
-I offer my services as a freelance Data Scienctist to solve problems using data and increase efficency in your work, saving you time. I have experience working with environmental data such as weather and could easily bring this extra dimension into your project.
+I offer my services as a freelance Data Scientist to solve problems using data and increase efficiency in your work, saving you time. I have experience working with environmental data such as weather and could easily bring this extra dimension into your project.
 
