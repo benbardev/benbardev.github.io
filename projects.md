@@ -10,6 +10,6 @@ Weclome to my portfolio of projects. Here you'll find a posts showcasing the pro
 
 | Starship Titanic | Cloud Type Classifier | Cat/Dog Breed Identifier |
 |---|---|---|
-| <img src="images/starship.jpg" style="border-radius:10%" width=200px> | <img src="images/cloud.jpg" style="border-radius:10%" width=250px> | <img src="images/cat_dog.jpg" style="border-radius:10%" width=200px> |
+| <img src="images/starship.jpg" style="border-radius:10%" width=200px> | <img src="images/cloud.jpg" style="border-radius:10%" width=350px> | <img src="images/cat_dog.jpg" style="border-radius:10%" width=200px> |
 | [Link to Project](projects/starship) | [Link to Project](projects/cloud_classifier) | [Link to Project](projects/cat_dog) |
 | A decision tree model for predicting missing passangers on the fictional space ship Titanic. | An image classifier for 9 cloud types. | An image classifier for identifying cat and dog breeds. |
