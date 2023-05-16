@@ -33,8 +33,6 @@ The definitions of the cloud types are taken from the [Met Office](https://www.m
 
 While there is some logic in the naming, this is a lot of information to remember so it seems useful to be able to identify cloud type from a quick photo of the sky. Given that the cloud types have different texture and atmospheric heights a neural network may be able to learn features and give a reasonably accurate prediction of its type.
 
-Read Microsft Azure search key from file. To download images with Bing Image Search, sign up at Microsoft Azure for a free account and get a key.
-
 ## Setup Data with Labels
 
 I have collected photos from several sources. Many of these come from Microsoft Azure's Bing photo search. This is a tool that has limited free access and allowed me to start labelling photos based on searches. These initial searches were supplemented with photos from [Unsplash](https://unsplash.com/) and my own photos. Supplementing with my own photos does have a drawback of biassing the model towards where I live but was necessary to improve a small dataset. The bias is that cloud types can be more or less common in different parts of the world and have different atmospheric heights.
@@ -137,7 +135,7 @@ dls.valid.show_batch(max_n=4, nrows=1)
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_8_0.png)
+![png](/images/cloud_learner_files/cloud_learner_7_0.png)
     
 
 
@@ -196,7 +194,7 @@ lr_min,lr_steep = learn.lr_find(suggest_funcs=(minimum, steep))
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_12_4.png)
+![png](/images/cloud_learner_files/cloud_learner_11_4.png)
     
 
 
@@ -417,7 +415,7 @@ learn.lr_find()
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_18_3.png)
+![png](/images/cloud_learner_files/cloud_learner_17_3.png)
     
 
 
@@ -606,7 +604,7 @@ learn.recorder.plot_loss()
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_22_0.png)
+![png](/images/cloud_learner_files/cloud_learner_21_0.png)
     
 
 
@@ -664,7 +662,7 @@ interp.plot_confusion_matrix()
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_24_4.png)
+![png](/images/cloud_learner_files/cloud_learner_23_4.png)
     
 
 
@@ -703,7 +701,7 @@ interp.plot_top_losses(10, nrows=2)
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_26_2.png)
+![png](/images/cloud_learner_files/cloud_learner_25_2.png)
     
 
 
