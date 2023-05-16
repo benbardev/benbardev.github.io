@@ -1,7 +1,7 @@
 # Cloud Classifier
 
 Summary: An image classifier and inference deployment for classifying cloud type from the 10 main types. The 
-    neural network is pre-trained with resnet34 to speed up the learning proccess. The 
+    neural network is pre-trained with resnet34 to speed up the learning process. The 
     cloud_learner uses a collection of images downloaded from the web to train/refine the neural network. 
     The 10 main cloud types used here are:
     
@@ -29,56 +29,15 @@ Summary: An image classifier and inference deployment for classifying cloud type
 
 Some clouds bring precipitation, some just make the sky look interesting or dull. Clouds might all look fairly similar to an untrainer eye but here I ask if there are differences that a neural network can pick out? In this project I train a model to pick out these differences from photos. The wrinkle in this project is that a lot of photo of the sky have limited colour range and may or may not have ground objects that give context.
 
-The definitions of the cloud types are taken from the [Met Office](https://www.metoffice.gov.uk/weather/learn-about/weather/types-of-weather/clouds/cloud-names-classifications). In general, the name gives a clue about the hight and texture of the cloud. For the height, "cirro" are high cloud-base clouds (>6000 m), "alto" and "nimbostatus" are intermediate height cloud-base clouds (2000 - 6000 m), and the rest have a low cloud-base (<2000 m). Then for the texture, "cumulus" indicates fluffy, cauliflower like cloud, "status" are smooth blanket-like cloud, "nimbo" tent to be rain clouds that are thicker and therefore darker, and "cirrus" are light, spindly cloud.
+The definitions of the cloud types are taken from the [Met Office](https://www.metoffice.gov.uk/weather/learn-about/weather/types-of-weather/clouds/cloud-names-classifications). In general, the name gives a clue about the hight and texture of the cloud. For the height, "cirro" are high cloud-base clouds (>6000 m), "alto" and "nimbostratus" are intermediate height cloud-base clouds (2000 - 6000 m), and the rest have a low cloud-base (<2000 m). Then for the texture, "cumulus" indicates fluffy, cauliflower like cloud, "status" are smooth blanket-like cloud, "nimbo" tent to be rain clouds that are thicker and therefore darker, and "cirrus" are light, spindly cloud.
 
 While there is some logic in the naming, this is a lot of information to remember so it seems useful to be able to identify cloud type from a quick photo of the sky. Given that the cloud types have different texture and atmospheric heights a neural network may be able to learn features and give a reasonably accurate prediction of its type.
 
-
-```python
-#hide
-! [ -e /content ] && pip install -Uqq fastbook
-import fastbook
-fastbook.setup_book()
-```
-
-    [K     |████████████████████████████████| 719 kB 29.1 MB/s 
-    [K     |████████████████████████████████| 1.2 MB 57.6 MB/s 
-    [K     |████████████████████████████████| 365 kB 71.7 MB/s 
-    [K     |████████████████████████████████| 4.4 MB 61.6 MB/s 
-    [K     |████████████████████████████████| 140 kB 63.2 MB/s 
-    [K     |████████████████████████████████| 212 kB 82.0 MB/s 
-    [K     |████████████████████████████████| 101 kB 12.8 MB/s 
-    [K     |████████████████████████████████| 1.1 MB 54.3 MB/s 
-    [K     |████████████████████████████████| 596 kB 33.7 MB/s 
-    [K     |████████████████████████████████| 127 kB 54.4 MB/s 
-    [K     |████████████████████████████████| 271 kB 75.5 MB/s 
-    [K     |████████████████████████████████| 94 kB 4.2 MB/s 
-    [K     |████████████████████████████████| 144 kB 50.0 MB/s 
-    [K     |████████████████████████████████| 6.6 MB 66.6 MB/s 
-    [31mERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
-    datascience 0.10.6 requires folium==0.2.1, but you have folium 0.8.3 which is incompatible.[0m
-    [?25hMounted at /content/gdrive
-
-
-
-```python
-#hide
-from fastbook import *
-from fastai.vision.widgets import *
-```
-
 Read Microsft Azure search key from file. To download images with Bing Image Search, sign up at Microsoft Azure for a free account and get a key.
-
-
-```python
-#hide
-key_file = 'gdrive/MyDrive/Data_for_apps/key.txt'
-
-```
 
 ## Setup Data with Labels
 
-I have collected photos from several sources. Many of these come from Microsoft Azure's Bing photo search. This is a tool that has limited free access and allowed me to start labeling photos based on searches. These initial searches were suplemented with photos from [Unsplash](https://unsplash.com/) and my own photos. Suplementing with my own photos does have a drawback of biasing the model towards where I live but was necessary to improve a small dataset. The bias is that cloud types can be more or less common in different parts of the world and have different atmospheric heights.
+I have collected photos from several sources. Many of these come from Microsoft Azure's Bing photo search. This is a tool that has limited free access and allowed me to start labelling photos based on searches. These initial searches were supplemented with photos from [Unsplash](https://unsplash.com/) and my own photos. Supplementing with my own photos does have a drawback of biassing the model towards where I live but was necessary to improve a small dataset. The bias is that cloud types can be more or less common in different parts of the world and have different atmospheric heights.
 
 
 ```python
@@ -102,39 +61,7 @@ if not path.exists():
 
 ```
 
-Start cleaning the data by removing images that failed to download.
-
-
-```python
-# optional
-fns = get_image_files(path)
-fns
-#failed = verify_images(fns)
-#failed.map(Path.unlink)
-```
-
-
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-1-a6ad0e2bc218> in <module>()
-          1 # optional
-    ----> 2 fns = get_image_files(path)
-          3 fns
-          4 #failed = verify_images(fns)
-          5 #failed.map(Path.unlink)
-
-
-    NameError: name 'get_image_files' is not defined
-
-
-
-```python
-get_image_files??
-```
-
-I discovered some cloud types are return fewer results in searches than others. I think this is because some clouds are less interesting and photogenic than others biasing search results towards these. I found it harder to find photos of the smooth, blanket stratus at each atmospheric height and rain clouds. The final dataset had at least 90 photos of each type and around 1000 photos in total. This is a small dataset and made me realise how tricky it can be to get quality labeled training data. Let's see what we can do with what we've got.
+I discovered some cloud types are return fewer results in searches than others. I think this is because some clouds are less interesting and photogenic than others biassing search results towards these. I found it harder to find photos of the smooth, blanket stratus at each atmospheric height and rain clouds. The final dataset had at least 90 photos of each type and around 1000 photos in total. This is a small dataset and made me realise how tricky it can be to get quality labelled training data. Let's see what we can do with what we've got.
 
 
 ```python
@@ -187,18 +114,11 @@ print(len(fns))
 
 ## Loading and Training
 
-Make a data loader and train a model. The commented part used an earlier version of the code that used a function just loaded the image paths. This has been updated with the get_equal_images() function that gets an equal number of random photos from each category. In the DataBlock I reserve 20% of the dataset for validation. I have some data in a separate folder for testing. The DataBlock also resizes all images to equal 128 x 128 pixel squares. This avoids problems with portrait and landscape photos.
+Make a data loader and train a model. Here we use the get_equal_images() function that gets an equal number of random photos from each category. In the DataBlock I reserve 20% of the dataset for validation. I have some data in a separate folder for testing. The DataBlock also resizes all images to equal 128 x 128 pixel squares. This avoids problems with portrait and landscape photos.
 
 
 
 ```python
-
-#clouds = DataBlock(
-#    blocks=(ImageBlock, CategoryBlock), 
-#    get_items=get_image_files, 
-#    splitter=RandomSplitter(valid_pct=0.2, seed=42),
-#    get_y=parent_label,
-#    item_tfms=Resize(128))
 
 clouds = DataBlock(
     blocks=(ImageBlock, CategoryBlock), 
@@ -217,11 +137,11 @@ dls.valid.show_batch(max_n=4, nrows=1)
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_14_0.png)
+![png](/images/cloud_learner_files/cloud_learner_8_0.png)
     
 
 
-Below I make use of some of the useful tools in FastAI that performs data augmentation techniques. Specifically, the RandomResizedCrop() takes zoomed areas of a photo to add attionally variabiliy into the data. The aug_transforms() perform skewing in addition to the random crop. These augments increase the size of the dataset.
+Below I make use of some of the useful tools in FastAI that performs data augmentation techniques. Specifically, the RandomResizedCrop() takes zoomed areas of a photo to add additional variability into the data. The aug_transforms() perform skewing in addition to the random crop. These augments increase the size of the dataset.
 
 
 
@@ -233,9 +153,9 @@ dls = clouds.dataloaders(path)
 
 ```
 
-Here, I train the model (vision_learner) starting with the pre-trained image model resnet34. The is evaluated using the error_rate which is the 1 - accurancy calculated from mean of the difference between the predictions and the target. Lower is better for error rate.
+Here, I train the model (vision_learner) starting with the pre-trained image model resnet34. The is evaluated using the error_rate which is the 1 - accuracy calculated from mean of the difference between the predictions and the target. Lower is better for error rate.
 
-Next, I used the FastAI learning rate finder to idenfy an optimum learning rate for training the model.
+Next, I used the FastAI learning rate finder to identify an optimum learning rate for training the model.
 
 
 ```python
@@ -276,7 +196,7 @@ lr_min,lr_steep = learn.lr_find(suggest_funcs=(minimum, steep))
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_18_4.png)
+![png](/images/cloud_learner_files/cloud_learner_12_4.png)
     
 
 
@@ -497,7 +417,7 @@ learn.lr_find()
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_24_3.png)
+![png](/images/cloud_learner_files/cloud_learner_18_3.png)
     
 
 
@@ -676,7 +596,7 @@ learn.fit_one_cycle(10, lr_max=slice(1e-4, 5e-3))
 </table>
 
 
-The plot below shows the number of training batches against the loss. While both the train and validation datasets have decreasing loss over the training cycles overfitting is not a problem. Towards the end of the training epochs the validation set loss flattens off sugesting additional training is not improving the model and is begining to overfit to the training set.
+The plot below shows the number of training batches against the loss. While both the train and validation datasets have decreasing loss over the training cycles overfitting is not a problem. Towards the end of the training epochs the validation set loss flattens off suggesting additional training is not improving the model and is beginning to overfit to the training set.
 
 
 
@@ -686,11 +606,11 @@ learn.recorder.plot_loss()
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_28_0.png)
+![png](/images/cloud_learner_files/cloud_learner_22_0.png)
     
 
 
-The confusion matrix below shows number of predictions by the model against the actual label of the photo for each of the category for the validation dataset. Note, the uneven number of samples in each category is because of the random 20% in training and validation data.
+The confusion matrix below shows the number of predictions by the model against the actual label of the photo for each of the categories for the validation dataset. Note, the uneven number of samples in each category is because of the random 20% in training and validation data.
 
 The model does a fairly good job of predicting the cloud type for most of the categories. The category it struggles with are Altocumulus clouds that are confused for cirrocumulus. Both are upper upper atmosphere fluffy clouds. This suggests the model really needs more context to get the height of the cloud and that appearance alone makes it hard to distinguish to two.
 
@@ -744,13 +664,13 @@ interp.plot_confusion_matrix()
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_30_4.png)
+![png](/images/cloud_learner_files/cloud_learner_24_4.png)
     
 
 
 ## Clean the Data
 
-Now I have a trained model I can use the model to check the dataset for bad files that are not of cloud or wrongly labeled. To do this, FastAI has some useful functions for plotting the images that are confused and have a high loss rate. This means I can double check them incorrectly labels. Any that are bad imgaes can be deleted or wrong labels can be re-labeled.
+Now I have a trained model I can use the model to check the dataset for bad files that are not of cloud or wrongly labelled. To do this, FastAI has some useful functions for plotting the images that are confused and have a high loss rate. This means I can double check incorrect labels. Any that are bad images can be deleted or wrong labels can be re-labelled.
 
 With cleaner data I then re-train the model in the previous step and iterate a bit.
 
@@ -783,7 +703,7 @@ interp.plot_top_losses(10, nrows=2)
 
 
     
-![png](/images/cloud_learner_files/cloud_learner_32_2.png)
+![png](/images/cloud_learner_files/cloud_learner_26_2.png)
     
 
 
@@ -849,7 +769,7 @@ for idx in cleaner.delete(): cleaner.fns[idx].unlink()
 
 ## Export the model
 
-After itterating on the pervious code to remove or relabel wrongly labeled data, I export the model.
+After iterating on the pervious code to remove or relabel wrongly labelled data, I export the model.
 
 
 ```python
@@ -863,6 +783,6 @@ learn.export(fname='gdrive/MyDrive/Data_for_apps/Cloud_Learner/export.pkl')
 
 ## Conclusion
 
-Using the script [here](https://github.com/benbardev/Cloud_Classifier/blob/main/src/cloud_classifier.ipynb), I took the trained model and deploy it for inferance using the cloud application platform [Heroku](https://www.heroku.com/). Unfortunately, the free service they offered is no longer available but I may use Heroku again for a different project. This was interesting for me to take a project all the way to the deployment stage and have a little web applicaiton that could do something useful and test out my work.
+Using the script [here](https://github.com/benbardev/Cloud_Classifier/blob/main/src/cloud_classifier.ipynb), I took the trained model and deploy it for inference using the cloud application platform [Heroku](https://www.heroku.com/). Unfortunately, the free service they offered is no longer available but I may use Heroku again for a different project. This was interesting for me to take a project all the way to the deployment stage and have a little web application that could do something useful and test out my work.
 
-This project had some challenges with finding useful data and relied on me to label some of it and check it. This was time consuming and my have some inaccuracies in my own cloud identification ability. The final dataset was on the small side. The result is a model that can classify photos of clouds.
+This project had some challenges with finding useful data and relied on me to label some of it and check it. This was time consuming and may have some inaccuracies in my own cloud identification ability. The final dataset was on the small side. The result is a model that can classify photos of clouds.
